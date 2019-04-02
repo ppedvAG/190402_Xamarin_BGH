@@ -2,13 +2,83 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Layoutcontainer"
-             x:Class="Layoutcontainer.MainPage">
+             x:Class="Layoutcontainer.MainPage"
+             BackgroundColor="#127AC7">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <!-- HorizontalOptions + VerticalOptions 
+         
+    Layoutcontainer: Start/Center/End/Fill
+    Elemente IM Container: StartAndExpand/CenterAndExpand ...
+    
+    -->
+    <!--<StackLayout BackgroundColor="Lavender"
+                 Orientation="Vertical"
+                 Spacing="0">
+        <Button Text="Button 1"/>
+        <Button Text="Button 2"/>
+        <BoxView BackgroundColor="Orange"
+                 VerticalOptions="FillAndExpand"/>
+        <Button Text="Button 3"/>
+    </StackLayout>-->
+
+    <!--<StackLayout VerticalOptions="Center">
+        <Label Text="Welcome to Xamarin" FontSize="30" FontAttributes="Bold"
+               HorizontalOptions="Center"
+               BackgroundColor="Orange"/>
+        <Label Text="Cross-platform apps made easy"
+               HorizontalTextAlignment="Center"
+               BackgroundColor="Orange"/>
+        <Button Text="Login"/>
+        <Button Text="Register"/>
+    </StackLayout>-->
+
+    <!--<Grid BackgroundColor="Gold"
+          ColumnSpacing="0"
+          RowSpacing="0">
+
+        <BoxView Grid.Row="0" BackgroundColor="YellowGreen"/>
+        <BoxView Grid.Row="1" BackgroundColor="MediumSpringGreen"/>
+        <BoxView Grid.Row="4" BackgroundColor="LimeGreen"/>
+
+        <StackLayout
+            Grid.Row="1" Grid.RowSpan="3"
+            Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="ForestGreen">
+            <Button Text="abcde"/>
+            <Button Text="abcde"/>
+            <Button Text="abcde"/>
+            <Button Text="abcde"/>
+            <Button Text="abcde"/>
+        </StackLayout>
+
+    </Grid>-->
+
+    <!-- Sonderwerte für Columndefinition und RowDefinition: -->
+    <!-- * -> "Alles (anteilig, zb 1* und 2*)" -->
+    <!-- Auto -> Größe hängt vom Größten Element ab: "nur das, was man braucht" -->
+    <!-- Margin  => Aussenabstand-->
+    <!-- Padding => Innenabstand-->
+    <!-- Werte: "links,oben,rechts,unten"-->
+    <!-- Werte: "linksrechts,obenunten"-->
+    <!-- Werte: "alles"-->
+
+    <Grid BackgroundColor="YellowGreen"
+          RowSpacing="20"
+          Padding="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        
+        <Entry Grid.Row="0" Grid.Column="0" Placeholder="Suchtext"/>
+        <Button Grid.Row="0" Grid.Column="1" Text="Suchen !"/>
+        <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="LightBlue"/>
+
+    </Grid>
+
 
 </ContentPage>
