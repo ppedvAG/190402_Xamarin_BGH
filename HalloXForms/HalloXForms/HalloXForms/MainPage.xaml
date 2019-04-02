@@ -9,7 +9,42 @@
         
         <Label Text="Welcome to Xamarin.Forms! ---- by michi" />
         <Button Text="Klick mich !" Clicked="Button_Clicked"/>
+        <Entry x:Name="entryUsername" Placeholder="Username"/>
+        <Entry x:Name="entryPasswort" Placeholder="Passwort" IsPassword="True"/>
+        <Button x:Name="buttonLogin" Text="Login" Clicked="ButtonLogin_Clicked" />
 
+        <BoxView BackgroundColor="HotPink" HeightRequest="5" />
+        <!-- Mehrzeiliges Entry -->
+        <Editor HeightRequest="100"/>
+        <Switch IsToggled="True"/>
+        <Slider Minimum="0" Maximum="100" Value="20"/>
+        
+        <Label Text="Aktueller Fortschritt:"/>
+        <ProgressBar Progress="0.333"/>
+        <Stepper Minimum="0" Maximum="10" Increment="2"/>
+
+        <ActivityIndicator IsRunning="True"/>
+
+        <BoxView BackgroundColor="LawnGreen" HeightRequest="5"/>
+
+        <Picker>
+            <Picker.Items>
+                <x:String>Apfel</x:String>
+                <x:String>Birne</x:String>
+                <x:String>Banane</x:String>
+                <x:String>Orange</x:String>
+                <x:String>Kirsche</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <DatePicker x:Name="datePicker" />
+        <TimePicker x:Name="timePicker" />
+
+        <Button x:Name="buttonZeit" Text="Werte ausgeben:" Clicked="ButtonZeit_Clicked"/>
+
+        <WebView Source="http://derstandard.at" HeightRequest="100"/>
+        
+        
     </StackLayout>
 
 </ContentPage>
