@@ -85,7 +85,7 @@
 
     </Grid>-->
 
-    <Grid BackgroundColor="Black"
+    <!--<Grid BackgroundColor="Black"
           Padding="40"
           RowSpacing="10"
           ColumnSpacing="10">
@@ -100,8 +100,8 @@
             <ResourceDictionary>
                 <x:Double x:Key="meineZahl"> 40 </x:Double>
 
-                <!-- Expliziter Style-->
-                <!-- Vererbung mithilfe von BasedOn-->
+                --><!-- Expliziter Style-->
+                <!-- Vererbung mithilfe von BasedOn--><!--
                 <Style TargetType="Button" x:Key="specialButtonStyle">
                     <Setter Property="BackgroundColor" Value="Gainsboro"/>
                     <Setter Property="TextColor" Value="DarkGray"/>
@@ -109,8 +109,8 @@
                     <Setter Property="CornerRadius" Value="20"/>
                 </Style>
 
-                <!-- Impliziter Style-->
-                <!-- Gilt automatisch für alle Buttons-->
+                --><!-- Impliziter Style-->
+                <!-- Gilt automatisch für alle Buttons--><!--
                 <Style TargetType="Button">
                     <Setter Property="BackgroundColor" Value="LemonChiffon"/>
                     <Setter Property="TextColor" Value="CadetBlue"/>
@@ -133,7 +133,60 @@
         <Button Grid.Row="3" Grid.Column="2" Text="9" />
         <Button Grid.Row="4" Grid.Column="1" Text="0" BorderRadius="30" TextColor="Black" FontSize="25"/>
         <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Text="Dial" BorderRadius="30" BackgroundColor="Green" TextColor="Black" FontSize="25"/>
-    </Grid>
+    </Grid>-->
+
+
+    <!-- AbsoluteLayout-->
+    <!-- AbsoluteLayout.LayoutBounds="X,Y,width,height"-->
+    <!-- Proportional (zwischen 0 und 1) mit AbsolueLayout.LayoutFlags-->
+    <!-- Achtung: Position fängt nicht bei "0.333" an, sondern verteilt die Höhe ab diesem Punkt gleichmäßig rauf und runter-->
+    <!-- Trick: Y auf 1 setzen damit nur noch in eine Richtung die höhe gesetzt werden kann-->
+
+    <!--<AbsoluteLayout BackgroundColor="LightGreen">
+
+        <BoxView BackgroundColor="LightCyan" 
+                 AbsoluteLayout.LayoutBounds="0,0,1,0.333"
+                 AbsoluteLayout.LayoutFlags="SizeProportional"/>
+
+        <BoxView BackgroundColor="LightGoldenrodYellow"
+                 AbsoluteLayout.LayoutBounds="50,50,100,100"/>
+
+        <BoxView BackgroundColor="MediumBlue"
+                 AbsoluteLayout.LayoutBounds="80,80,100,100"/>
+
+        <BoxView BackgroundColor="SkyBlue" 
+                 AbsoluteLayout.LayoutBounds="0,1,1,0.667"
+                 AbsoluteLayout.LayoutFlags="All"/>
+
+    </AbsoluteLayout>-->
+
+    
+    
+    <RelativeLayout BackgroundColor="Maroon">
+        <BoxView x:Name="boxViewHeader" BackgroundColor="Plum"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Width,
+                                Factor=1}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Height,
+                                Factor=0.333}"/>
+
+        <BoxView BackgroundColor="DarkGreen" HeightRequest="100" WidthRequest="100"
+                 RelativeLayout.XConstraint="{ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=boxViewHeader,
+                                Property=Width,
+                                Factor=0.5,
+                                Constant=-50}"
+                 RelativeLayout.YConstraint="{ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=boxViewHeader,
+                                Property=Height,
+                                Factor=1,
+                                Constant=-50}"/>
+    </RelativeLayout>
 
 
 </ContentPage>
