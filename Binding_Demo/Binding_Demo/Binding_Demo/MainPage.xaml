@@ -3,12 +3,37 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Binding_Demo"
              x:Class="Binding_Demo.MainPage">
+    <ContentPage.Resources>
+        <local:Farbkonverter x:Key="meinKonverter"/>
+    </ContentPage.Resources>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout VerticalOptions="Center">
+
+        <Slider x:Name="sliderWert" Minimum="0" Maximum="100"/>
+        <Label x:Name="labelWert" Text="{Binding Source={x:Reference sliderWert},Path=Value,Mode=TwoWay}"/>
+        <!-- Alternative Schreibweise: {Binding Property, Source= .... } -->
+        <Label  Text="Das ist ein Text ..." FontSize="{Binding Value, Source={x:Reference sliderWert}}"/>
+        <Entry x:Name="entryWert" Text="{Binding Text,Source={x:Reference labelWert}}"/>
+
+        <BoxView BackgroundColor="Black" HeightRequest="3"/>
+        
+        <!-- Standarddatenquelle für Bindings: BindingContext -->
+
+        <Stepper x:Name="stepperWert" Minimum="0" Maximum="20" Increment="2"/>
+
+        <StackLayout BackgroundColor="LightCoral" BindingContext="{x:Reference stepperWert}">
+            <Label Text="{Binding Minimum, StringFormat='Minimum: {0}'  }"/>
+            <Label Text="{Binding Value, StringFormat='Aktueller Wert: {0}'}"/>
+            <Label Text="{Binding Maximum}"/>
+        </StackLayout>
+
+        <BoxView BackgroundColor="Black" HeightRequest="3"/>
+        
+        <!-- Converter -->
+
+        <Entry x:Name="entryFarbe" Text="Red"/>
+        <BoxView BackgroundColor="{Binding Source={x:Reference entryFarbe},Path=Text,Converter={StaticResource meinKonverter}}"/>
+
     </StackLayout>
 
 </ContentPage>
