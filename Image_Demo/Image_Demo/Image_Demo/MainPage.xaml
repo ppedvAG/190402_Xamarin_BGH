@@ -21,7 +21,11 @@
         <!-- Schritte : Bild dem .NET Standard-Projekt hinzufügen -->
         <!-- Eigenschaften des Bilds: BuildAction auf "EmbeddedResource" stellen !!! -->
 
-        <Image x:Name="image1" Source="{local:EmbeddedImage ID=Image_Demo.Images.hund.jpg}" />
+        <Image x:Name="image1"
+               VerticalOptions="Center" HorizontalOptions="Center"
+               HeightRequest="400" WidthRequest="400"
+               Aspect="AspectFill"
+               Source="{local:EmbeddedImage ID=Image_Demo.Images.hund.jpg}" />
    
 
     </StackLayout>
