@@ -5,10 +5,25 @@
              x:Class="Image_Demo.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        
+        <!-- 3 Varianten um Bilder in Xamarin.Forms einzubetten: -->
+        
+        <!-- Variante 1: Uri -->
+        <!-- Image Source="https://www.zooroyal.de/magazin/wp-content/uploads/2017/11/Goldhamster-760x560.jpg"/-->
+
+        <!-- Variante 2 : Bilder im nativen Projekt hinterlegen -->
+        <!-- Android: Resources\drawable -->
+        <!-- iOS: Doppelklick Info.plist: AssetCatalog erstellen und obenlinks "+" hinzufügen in allen gewünschten Auflösungen -->
+        <!-- UWP: Root-Verzeichnis des Projekts-->
+        <!-- Image x:Name="image1" Source="katze.jpg" /-->
+
+        <!-- Variante 3 : Bilder im geteilten .NET Standard Projekt hinterlegen -->
+        <!-- Schritte : Bild dem .NET Standard-Projekt hinzufügen -->
+        <!-- Eigenschaften des Bilds: BuildAction auf "EmbeddedResource" stellen !!! -->
+
+        <Image x:Name="image1" Source="{local:EmbeddedImage ID=Image_Demo.Images.hund.jpg}" />
+   
+
     </StackLayout>
 
 </ContentPage>
