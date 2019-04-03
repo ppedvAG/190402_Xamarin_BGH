@@ -15,7 +15,7 @@ namespace Binding_Demo
             string farbe = (string)value;
 
             // "#FF00FF" => RGB
-            if(farbe[0] == '#')
+            if (farbe[0] == '#')
             {
                 return Color.FromHex(farbe);
             }
@@ -30,15 +30,15 @@ namespace Binding_Demo
 
             // Variante mit Reflection ->
             var allFields = typeof(Color).GetFields();
-            
+
             // Any: Wenn ein Element in der Liste die Bedingung erfüllt => True, ansonsten => False
-            if(allFields.Any(x => x.Name.ToLower() == farbe.ToLower())) // Gibt es ein Feld mit dem selben Namen ?
+            if (allFields.Any(x => x.Name.ToLower() == farbe.ToLower())) // Gibt es ein Feld mit dem selben Namen ?
             {
                 return allFields.First(x => x.Name.ToLower() == farbe.ToLower()).GetValue(typeof(Color));
             }
             else // Es gibt kein Feld mit diesem Namen
             {
-               return Color.Black;
+                return Color.Black;
             }
 
             // allFields.Any(x => x.Name.ToLower() == farbe.ToLower())
