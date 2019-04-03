@@ -38,7 +38,7 @@ namespace Binding_Demo
             }
             else // Es gibt kein Feld mit diesem Namen
             {
-               // return Color.Black;
+               return Color.Black;
             }
 
             // allFields.Any(x => x.Name.ToLower() == farbe.ToLower())

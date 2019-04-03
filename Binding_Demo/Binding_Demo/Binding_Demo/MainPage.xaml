@@ -32,7 +32,9 @@
         <!-- Converter -->
 
         <Entry x:Name="entryFarbe" Text="Red"/>
-        <BoxView BackgroundColor="{Binding Source={x:Reference entryFarbe},Path=Text,Converter={StaticResource meinKonverter}}"/>
+        <BoxView BackgroundColor="{Binding Source={x:Reference entryFarbe},Path=Text,
+                                           Converter={StaticResource meinKonverter},
+                                           ConverterParameter=12}"/>
 
     </StackLayout>
 
