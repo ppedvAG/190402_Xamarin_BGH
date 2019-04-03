@@ -3,12 +3,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MittwochEinstieg"
              x:Class="MittwochEinstieg.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <Style TargetType="Button" x:Key="buttonLightTheme">
+                <Setter Property="BackgroundColor" Value="LightGray"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="30"/>
+            </Style>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+
+            <Style TargetType="Button" x:Key="buttonDarkTheme">
+                <Setter Property="BackgroundColor" Value="Red"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+    <Grid x:Name="gridRoot" BackgroundColor="LightBlue" Padding="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackLayout VerticalOptions="CenterAndExpand" Grid.ColumnSpan="2">
+            <Entry x:Name="entryUsername" Placeholder="Username" TextColor="Black" PlaceholderColor="Black"/>
+            <Entry x:Name="entryPasswort" Placeholder="Passwort" TextColor="Black" PlaceholderColor="Black"/>
+            <Button x:Name="buttonLogin" Text="Login" Style="{StaticResource buttonLightTheme}"/>
+        </StackLayout>
+
+        <Label Grid.Row="1" Grid.Column="0" Text="Darkmode:" TextColor="Black"
+               VerticalTextAlignment="Center" HorizontalTextAlignment="End"/>
+        <Switch x:Name="switchDarkMode" Grid.Row="1" Grid.Column="1" Toggled="SwitchDarkMode_Toggled"/>
+
+    </Grid>
 
 </ContentPage>

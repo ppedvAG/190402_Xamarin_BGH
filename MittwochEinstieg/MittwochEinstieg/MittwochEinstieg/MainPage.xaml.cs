@@ -13,5 +13,13 @@ namespace MittwochEinstieg
         {
             InitializeComponent();
         }
+
+        private void SwitchDarkMode_Toggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value == true)
+                buttonLogin.Style = (Style)this.Resources["buttonDarkTheme"];
+            else
+                buttonLogin.Style = this.Resources["buttonLightTheme"] as Style;
+        }
     }
 }
