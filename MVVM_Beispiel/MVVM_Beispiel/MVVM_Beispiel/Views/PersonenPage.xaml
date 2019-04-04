@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:MVVM_Beispiel.ViewModels"
+             x:Class="MVVM_Beispiel.Views.PersonenPage">
+    <ContentPage.BindingContext>
+        <vm:PersonenViewModel/>
+    </ContentPage.BindingContext>
+    
+    <StackLayout>
+        <Button Text="Lade Personen" Command="{Binding LadePersonenCommand}"/>
+        
+        <ListView ItemsSource="{Binding Personenliste}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding GanzerName}" Detail="{Binding Alter}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+</ContentPage>
