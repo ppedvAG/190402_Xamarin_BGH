@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +18,13 @@ namespace MittwochEinstieg
 			InitializeComponent ();
 		}
 
-        private List<Person> personen;
+        // ObservableCollection gibt änderungen an der Liste (Add/Remove/Sort/Clear usw..) an das UI weiter
+        // -> "Refresh" ist nicht notwendig !
+        private ObservableCollection<Person> personen;
 
         private void LadePersonen()
         {
-            personen = new List<Person>
+            personen = new ObservableCollection<Person>
             {
                 new Person{Vorname="Tom",Nachname="Ate",Alter=10,Kontostand=100},
                 new Person{Vorname="Anna",Nachname="Nass",Alter=20,Kontostand=2200},
@@ -42,6 +45,40 @@ namespace MittwochEinstieg
             LadePersonen();
 
             listViewPersonen.ItemsSource = personen;
+        }
+
+        private void ListViewPersonen_Refreshing(object sender, EventArgs e)
+        {
+            LadePersonen();
+
+            listViewPersonen.ItemsSource = personen;
+
+            // Variante 1
+            // listViewPersonen.IsRefreshing = false;
+
+            // Variante 2
+            listViewPersonen.EndRefresh();
+        }
+
+        private void MenuItemInfo_Clicked(object sender, EventArgs e)
+        {
+            MenuItem item = sender as MenuItem;
+            Person aktuellePerson = (Person)item.BindingContext;
+
+            DisplayAlert("Personendaten", $"{aktuellePerson.GanzerName}, Alter:{aktuellePerson.Alter}, Kontostand: {aktuellePerson.Kontostand}€", "Ok");
+        }
+
+        private void MenuItemDelete_Clicked(object sender, EventArgs e)
+        {
+            MenuItem item = sender as MenuItem;
+            Person aktuellePerson = (Person)item.BindingContext;
+
+            personen.Remove(aktuellePerson);
+        }
+
+        private void SearchBarSuchtext_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            listViewPersonen.ItemsSource = personen.Where(x => x.GanzerName.StartsWith(searchBarSuchtext.Text));
         }
     }
 }

@@ -16,7 +16,9 @@
         <SearchBar x:Name="searchBarSuchtext"
                    BackgroundColor="Gray"
                    Grid.Column="0"  
-                   Grid.Row="0"/>
+                   Grid.Row="0"
+                   TextChanged="SearchBarSuchtext_TextChanged"/>
+        
         <Button x:Name="buttonSuchen"
                 BackgroundColor="Gray"
                 Grid.Column="1"
@@ -27,11 +29,19 @@
         <ListView x:Name="listViewPersonen"
                   Grid.ColumnSpan="2"
                   Grid.Column="0"
-                  Grid.Row="1">
+                  Grid.Row="1"
+                  
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListViewPersonen_Refreshing">
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding GanzerName}" Detail="{Binding Kontostand}"/>
+                    <TextCell Text="{Binding GanzerName}" Detail="{Binding Kontostand}">
+                        <TextCell.ContextActions>
+                            <MenuItem x:Name="menuItemInfo" Text="Info" Clicked="MenuItemInfo_Clicked"/>
+                            <MenuItem x:Name="menuItemDelete" Text="Löschen" Clicked="MenuItemDelete_Clicked"/>
+                        </TextCell.ContextActions>
+                    </TextCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
             
