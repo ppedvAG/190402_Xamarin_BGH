@@ -80,5 +80,10 @@ namespace MittwochEinstieg
         {
             listViewPersonen.ItemsSource = personen.Where(x => x.GanzerName.StartsWith(searchBarSuchtext.Text));
         }
+
+        private void ContentPage_Appearing(object sender, EventArgs e)
+        {
+            ButtonSuchen_Clicked(sender, e);
+        }
     }
 }
