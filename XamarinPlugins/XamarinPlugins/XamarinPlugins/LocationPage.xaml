@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinPlugins.LocationPage">
+
+
+    <StackLayout>
+        <Button x:Name="buttonGetLocation" Text="Get Location !" Clicked="ButtonGetLocation_Clicked"/>
+
+        <BoxView>
+            <BoxView.BackgroundColor>
+                <OnPlatform Android="Green" iOS="Red" UWP="Blue"/>
+            </BoxView.BackgroundColor>
+            <BoxView.IsVisible>
+                <OnIdiom Phone="True" Desktop="True"  Default="False"/>
+            </BoxView.IsVisible>
+        </BoxView>
+
+        <Button x:Name="buttonUWPOpenMaps" Text="UWP Open Maps with fixed Location" Clicked="ButtonUWPOpenMaps_Clicked">
+            <Button.IsVisible>
+                <OnIdiom Desktop="True" Default="False"/>
+            </Button.IsVisible>
+        </Button>
+        
+    </StackLayout>
+
+
+</ContentPage>

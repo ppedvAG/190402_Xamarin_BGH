@@ -5,10 +5,13 @@
              x:Class="XamarinPlugins.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Button x:Name="buttonFoto" Text="Foto" Clicked="ButtonFoto_Clicked"/>
+        <Image x:Name="imageFoto" />
+
+        <Button x:Name="buttonQR" Text="ReadQR" Clicked="ButtonQR_Clicked"/>
+        <Entry x:Name="entryQR" Placeholder="Text der zu QR verarbeitet werden soll"/>
+        <Button x:Name="buttonGenerateQR" Text="GenerateQR" Clicked="ButtonGenerateQR_Clicked"/>
+        <WebView x:Name="webViewQR" HeightRequest="300"/>
     </StackLayout>
 
 </ContentPage>
