@@ -13,17 +13,29 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <SearchBar BackgroundColor="Gray"
+        <SearchBar x:Name="searchBarSuchtext"
+                   BackgroundColor="Gray"
                    Grid.Column="0"  
                    Grid.Row="0"/>
-        <Button BackgroundColor="Gray"
+        <Button x:Name="buttonSuchen"
+                BackgroundColor="Gray"
                 Grid.Column="1"
                 Grid.Row="0"
-                Text="Suchen !"/>
+                Text="Suchen !"
+                Clicked="ButtonSuchen_Clicked"/>
 
-        <ListView Grid.ColumnSpan="2"
+        <ListView x:Name="listViewPersonen"
+                  Grid.ColumnSpan="2"
                   Grid.Column="0"
-                  Grid.Row="1"/>
+                  Grid.Row="1">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding GanzerName}" Detail="{Binding Kontostand}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
 
     </Grid>
 

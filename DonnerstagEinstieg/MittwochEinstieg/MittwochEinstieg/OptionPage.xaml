@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MittwochEinstieg.OptionPage">
+
+    <StackLayout>
+        
+        <TableView>
+            <TableRoot>
+                <TableSection Title="Einstellungen">
+                    <!-- Label -->
+                    <TextCell Text="Das ist ein Text in einer Textzelle"
+                              Detail="Unterüberschrift"/>
+                    <ImageCell Text="Tom Ate"
+                               Detail="Online"/>
+
+                    <EntryCell Label="Vorname:" Placeholder="dein Vorname"/>
+                    <EntryCell Label="Nachname:" Placeholder="dein Nachname"/>
+
+                    <SwitchCell Text="Notifications" On="True"/>
+
+                </TableSection>
+                
+                <TableSection Title="Mehr Einstellungen">
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="ButtoText:"/>
+                            <Button Text="klick mich"/>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="3">
+                            <Label Text="Datum wählen:" VerticalTextAlignment="Center"/>
+                            <DatePicker HorizontalOptions="FillAndExpand" />
+                        </StackLayout>
+                    </ViewCell>
+
+                </TableSection>
+
+
+            </TableRoot>
+        </TableView>
+        
+        
+    </StackLayout>
+
+</ContentPage>
