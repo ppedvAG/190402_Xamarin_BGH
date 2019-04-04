@@ -26,7 +26,24 @@ namespace MVVM_Beispiel.ViewModels
         private void LadePersonen(object obj)
         {
             Personenliste = service.LadePersonen();
+
+            // C#6 NullConditional Operator
+            //if(PropertyChanged != null)
+            //{
+            //    PropertyChanged.Invoke(this, new PropertyChangedEventArgs(nameof(Personenliste)));
+            //}
+
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Personenliste)));
+
+            // Anwendungsfall
+            // Person.Adresse.Straße
+            // if(person != null && person.adresse != null && person.adresse.straße != null)
+
+            // if(person?.adresse?.straße != null)
+
+            // StringBuilder
+            // (stringbuilder != null && stringbuilder.Length > 10)
+            // (stringbuilder?.Length > 10)
         }
     }
 }
