@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MittwochEinstieg"
-             x:Class="MittwochEinstieg.MainPage">
+             x:Class="MittwochEinstieg.MainPage" Title="Login - Seite">
     <ContentPage.Resources>
         <ResourceDictionary>
 
@@ -38,8 +38,8 @@
 
         <StackLayout VerticalOptions="CenterAndExpand" Grid.ColumnSpan="2">
             <Entry x:Name="entryUsername" Placeholder="Username" TextColor="Black" PlaceholderColor="Black"/>
-            <Entry x:Name="entryPasswort" Placeholder="Passwort" TextColor="Black" PlaceholderColor="Black"/>
-            <Button x:Name="buttonLogin" Text="Login" Style="{DynamicResource currentButtonStyle}"/>
+            <Entry x:Name="entryPasswort" Placeholder="Passwort" TextColor="Black" PlaceholderColor="Black" IsPassword="True"/>
+            <Button x:Name="buttonLogin" Text="Login" Style="{DynamicResource currentButtonStyle}" Clicked="ButtonLogin_Clicked"/>
         </StackLayout>
 
         <Label Grid.Row="1" Grid.Column="0" Text="Darkmode:" TextColor="Black"

@@ -27,5 +27,17 @@ namespace MittwochEinstieg
             else
                 this.Resources["currentButtonStyle"] = this.Resources["buttonLightTheme"];
         }
+
+        private void ButtonLogin_Clicked(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(entryUsername.Text) == false && entryPasswort.Text == "geheim")
+            {
+                Navigation.PushAsync(new DataTabPage());
+            }
+            else
+            {
+                DisplayAlert("Login", "Username oder Passwort falsch", "OK");
+            }
+        }
     }
 }
