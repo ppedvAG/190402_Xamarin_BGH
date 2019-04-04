@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MittwochEinstieg.DynamicPage">
+
+    <StackLayout>
+        <ListView x:Name="listViewDaten"
+                  Grid.ColumnSpan="2"
+                  Grid.Column="0"
+                  Grid.Row="1"
+                  IsPullToRefreshEnabled="True"
+                  Refreshing="ListViewDaten_Refreshing">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <ViewCell>
+                        <Grid>
+                            <StackLayout IsVisible="{Binding IsLoading}" Orientation="Horizontal">
+                                <Label Text="{Binding Text}"/>
+                                <ProgressBar Progress="{Binding Progress}" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                            <StackLayout IsVisible="{Binding Loaded}">
+                                <Label Text="{Binding Text}"/>
+                                <Label Text="{Binding Data}"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

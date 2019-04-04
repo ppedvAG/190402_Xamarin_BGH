@@ -6,5 +6,6 @@
 
     <local:PersonPage Title="Personen" />
     <local:OptionPage Title="Optionen" />
-    
+    <local:DynamicPage Title="Dynamische Elemente"/>
+
 </TabbedPage>
