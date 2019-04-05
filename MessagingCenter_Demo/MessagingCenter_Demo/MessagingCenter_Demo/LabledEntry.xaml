@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MessagingCenter_Demo.LabledEntry">
+
+
+    <StackLayout Orientation="Horizontal">
+        <Label x:Name="label123"
+               Text="{Binding LabelText}"
+               VerticalTextAlignment="Center" />
+        <Entry x:Name="entry123"
+               Text="{Binding EntryText}"
+               Placeholder="{Binding Placeholder}"
+               HorizontalOptions="FillAndExpand"/>
+    </StackLayout>
+
+
+</ContentView>

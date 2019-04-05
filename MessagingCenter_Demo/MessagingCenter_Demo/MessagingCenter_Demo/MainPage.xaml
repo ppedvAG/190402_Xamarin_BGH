@@ -8,7 +8,11 @@
         
         <Label x:Name="labelWert" Text="---WERT aus einer anderen Seite---"/>
         <Button Text="Zur Seite 2" Clicked="Button_Clicked"/>
-        
+
+        <local:LabledEntry LabelText="Vorname:" Placeholder="Dein Vorname" />
+        <local:LabledEntry LabelText="Nachname:" Placeholder="Dein Nachname" />
+        <local:LabledEntry LabelText="Alter:" Placeholder="Dein Alter" />
+
     </StackLayout>
 
 </ContentPage>
