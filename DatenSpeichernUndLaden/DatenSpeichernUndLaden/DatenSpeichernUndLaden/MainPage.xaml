@@ -4,11 +4,12 @@
              xmlns:local="clr-namespace:DatenSpeichernUndLaden"
              x:Class="DatenSpeichernUndLaden.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout VerticalOptions="Center">
+
+        <Entry x:Name="entryText" Placeholder="dein Text"/>
+        <Button x:Name="buttonSpeichern" Text="Speichern als .txt" Clicked="ButtonSpeichern_Clicked"/>
+        <Button x:Name="buttonLaden" Text="Textdokument laden" Clicked="ButtonLaden_Clicked"/>
+
     </StackLayout>
 
 </ContentPage>

@@ -11,7 +11,7 @@ namespace DatenSpeichernUndLaden
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new TabbedPageRoot();
         }
 
         protected override void OnStart()
