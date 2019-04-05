@@ -1,0 +1,554 @@
+Mail: michaelz@ppedv.at
+
+hallo
+Hallo vom Michi :) 2. Hallo von Christoph
+hallo vom mehran
+hallo von Christian
+
+Links:
+https://github.com/ppedvAG/190402_Xamarin_BGH
+https://developer.android.com/guide/topics/connectivity/usb/index.html
+https://developer.xamarin.com/api/namespace/Android.Hardware.Usb/
+https://docs.microsoft.com/en-us/xamarin/ios/get-started/installation/index
+https://docs.microsoft.com/en-us/xamarin/ios/app-fundamentals/file-system
+https://git-scm.com/book/en/v2
+https://help.github.com/en/articles/set-up-git
+https://github.com/ppedvAG/XamarinDevDaysVIE
+
+Bildlinks:
+http://placekitten.com/g/50/50
+https://baconmockup.com/200/200/
+http://www.fillmurray.com/200/300
+http://www.placecage.com/200/300
+https://www.stevensegallery.com/g/200/300
+
+MVVM-Frameworks:
+prism (Mirosoft)
+mvvmlight
+mvvmcross
+
+Nuget:
+xam.plugin
+https://docs.microsoft.com/en-gb/xamarin/essentials/
+https://github.com/jamesmontemagno/MediaPlugin
+https://github.com/Redth/ZXing.Net.Mobile
+https://github.com/tmt242001/Plugin.LocalNotification   (<--- hat leider nicht funktioniert :( )
+https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/notifications/local-notifications
+https://github.com/praeclarum/sqlite-net/wiki
+
+
+
+Push-Notifications:
+----Rein Android:
+https://docs.microsoft.com/en-us/azure/notification-hubs/xamarin-notification-hubs-push-notifications-android-gcm
+----Azure:
+https://docs.microsoft.com/en-us/xamarin/xamarin-forms/data-cloud/push-notifications/azure
+
+
+REST-API:
+https://developers.google.com/apis-explorer
+https://jsonplaceholder.typicode.com/
+"opendata" googlen
+https://www.googleapis.com/books/v1/volumes?q=wpf
+
+Tools:
+http://json2csharp.com/
+https://app.quicktype.io
+
+
+//Deployment-Detaileinstellungen:
+Android:
+https://docs.microsoft.com/de-de/xamarin/android/deploy-test/release-prep/?tabs=windows
+iOS:
+iTunes Connect
+https://developer.apple.com/app-store/review/guidelines/
+Store 99$
+https://docs.microsoft.com/de-de/xamarin/ios/deploy-test/app-distribution/app-store-distribution/?tabs=windows
+Enterprise 299$ intern
+https://docs.microsoft.com/de-de/xamarin/ios/deploy-test/app-distribution/in-house-distribution?tabs=windows
+AdHoc:
+https://docs.microsoft.com/de-de/xamarin/ios/deploy-test/app-distribution/ad-hoc-distribution?tabs=windows
+
+
+    <!-- HorizontalOptions + VerticalOptions 
+         
+    Layoutcontainer: Start/Center/End/Fill
+    Elemente IM Container: StartAndExpand/CenterAndExpand ...
+    
+    -->
+    <StackLayout BackgroundColor="Lavender"
+                 Orientation="Vertical"
+                 Spacing="0">
+        <Button Text="Button 1"/>
+        <Button Text="Button 2"/>
+        <BoxView BackgroundColor="Orange"
+                 VerticalOptions="FillAndExpand"/>
+        <Button Text="Button 3"/>
+    </StackLayout>
+
+    <Grid BackgroundColor="Gold"
+          ColumnSpacing="0"
+          RowSpacing="0">
+
+        <BoxView Grid.Row="0" BackgroundColor="YellowGreen"/>
+        <BoxView Grid.Row="1" BackgroundColor="MediumSpringGreen"/>
+        <BoxView Grid.Row="4" BackgroundColor="LimeGreen"/>
+
+        <StackLayout
+            Grid.Row="1" Grid.RowSpan="3"
+            Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="ForestGreen">
+            <Button Text="abcde"/>
+            <Button Text="abcde"/>
+            <Button Text="abcde"/>
+            <Button Text="abcde"/>
+            <Button Text="abcde"/>
+        </StackLayout>
+
+    </Grid>
+    
+    
+        <!-- Sonderwerte für Columndefinition und RowDefinition: -->
+    <!-- * -> "Alles (anteilig, zb 1* und 2*)" -->
+    <!-- Auto -> Größe hängt vom Größten Element ab: "nur das, was man braucht" -->
+    <!-- Margin  => Aussenabstand-->
+    <!-- Padding => Innenabstand-->
+    <!-- Werte: "links,oben,rechts,unten"-->
+    <!-- Werte: "linksrechts,obenunten"-->
+    <!-- Werte: "alles"-->
+
+    <Grid BackgroundColor="YellowGreen"
+          RowSpacing="20"
+          Padding="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        
+        <Entry Grid.Row="0" Grid.Column="0" Placeholder="Suchtext"/>
+        <Button Grid.Row="0" Grid.Column="1" Text="Suchen !"/>
+        <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="LightBlue"/>
+
+    </Grid>
+    
+    
+    
+        <Grid BackgroundColor="Black"
+          Padding="40"
+          RowSpacing="10"
+          ColumnSpacing="10">
+        <Label Grid.Row="0" Grid.Column="1" Text="1234" FontAttributes="Bold" TextColor="White" FontSize="40"
+               HorizontalOptions="Center"/>
+        
+        <Button Grid.Row="1" Grid.Column="0" Text="1" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="1" Grid.Column="1" Text="2" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="1" Grid.Column="2" Text="3" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="2" Grid.Column="0" Text="4" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="2" Grid.Column="1" Text="5" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="2" Grid.Column="2" Text="6" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="3" Grid.Column="0" Text="7" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="3" Grid.Column="1" Text="8" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="3" Grid.Column="2" Text="9" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="4" Grid.Column="1" Text="0" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+
+
+    </Grid>
+    
+    
+    
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Layoutcontainer"
+             x:Class="Layoutcontainer.MainPage"
+             BackgroundColor="#127AC7">
+
+    <!-- HorizontalOptions + VerticalOptions 
+         
+    Layoutcontainer: Start/Center/End/Fill
+    Elemente IM Container: StartAndExpand/CenterAndExpand ...
+    
+    -->
+    <!--<StackLayout BackgroundColor="Lavender"
+                 Orientation="Vertical"
+                 Spacing="0">
+        <Button Text="Button 1"/>
+        <Button Text="Button 2"/>
+        <BoxView BackgroundColor="Orange"
+                 VerticalOptions="FillAndExpand"/>
+        <Button Text="Button 3"/>
+    </StackLayout>-->
+    <!--<StackLayout BackgroundColor="#127AC7"
+                 Orientation="Vertical"
+                 VerticalOptions="Center">
+        <Label Text="Welcome To Xamarin" FontSize="30" FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <Label Text="Cross-platform apps made easy"
+               HorizontalOptions="Center"/>
+              
+        <Button Text="Login" BackgroundColor="#1DABF0"/>
+        <Button Text="Register" BackgroundColor="#1DABF0"/>
+       
+    </StackLayout>-->
+
+    <!--<Grid BackgroundColor="Gold"
+          ColumnSpacing="0"
+          RowSpacing="0">
+
+        <BoxView Grid.Row="0" BackgroundColor="YellowGreen"/>
+        <BoxView Grid.Row="1" BackgroundColor="MediumSpringGreen"/>
+        <BoxView Grid.Row="4" BackgroundColor="LimeGreen"/>
+
+        <BoxView 
+            Grid.Row="1" Grid.RowSpan="3"
+            Grid.Column="2" BackgroundColor="ForestGreen"/>
+
+        <StackLayout
+            Grid.Row="1" Grid.RowSpan="3"
+            Grid.Column="1" Grid.ColumnSpan="2" BackgroundColor="ForestGreen">
+            <Button Text="abcde"/>
+            <Button Text="abcde"/>
+            <Button Text="abcde"/>
+            <Button Text="abcde"/>
+            <Button Text="abcde"/>
+        </StackLayout>
+
+    </Grid>-->
+    <!-- Sonderwerte für Columndefinition und RowDefinition: -->
+    <!-- * -> "Alles (anteilig, zb 1* und 2*)" -->
+    <!-- Auto -> Größe hängt vom Größten Element ab: "nur das, was man braucht" -->
+    <!-- Margin  => Aussenabstand-->
+    <!-- Padding => Innenabstand-->
+    <!-- Werte: "links,oben,rechts,unten"-->
+    <!-- Werte: "linksrechts,obenunten"-->
+    <!-- Werte: "alles"-->
+
+    <!--<Grid BackgroundColor="YellowGreen"
+          RowSpacing="20"
+          Padding="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <Entry Grid.Row="0" Grid.Column="0" Placeholder="Suchtext"/>
+        <Button Grid.Row="0" Grid.Column="1" Text="Suchen !"/>
+        <ListView Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="LightBlue"/>
+
+    </Grid>-->
+
+    <Grid BackgroundColor="Black"
+          Padding="40"
+          RowSpacing="10"
+          ColumnSpacing="10">
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+               HorizontalTextAlignment="Center"
+               Text="1234" FontAttributes="Bold" TextColor="White" FontSize="40"
+               HorizontalOptions="Center"/>
+        
+        <Button Grid.Row="1" Grid.Column="0" Text="1" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="1" Grid.Column="1" Text="2" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="1" Grid.Column="2" Text="3" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="2" Grid.Column="0" Text="4" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="2" Grid.Column="1" Text="5" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="2" Grid.Column="2" Text="6" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="3" Grid.Column="0" Text="7" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="3" Grid.Column="1" Text="8" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="3" Grid.Column="2" Text="9" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="4" Grid.Column="1" Text="0" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+    </Grid>
+</ContentPage>
+    
+    
+    
+<Grid BackgroundColor="Black"
+          Padding="40"
+          RowSpacing="10"
+          ColumnSpacing="10">
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+               Text="1234"
+               FontAttributes="Bold"
+               TextColor="White"
+               FontSize="40"
+               HorizontalOptions="Center"/>
+
+        <Button Grid.Row="1" Grid.Column="0" Text="1" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="1" Grid.Column="1" Text="2" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="1" Grid.Column="2" Text="3" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="2" Grid.Column="0" Text="4" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="2" Grid.Column="1" Text="5" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="2" Grid.Column="2" Text="6" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="3" Grid.Column="0" Text="7" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="3" Grid.Column="1" Text="8" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="3" Grid.Column="2" Text="9" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="4" Grid.Column="1" Text="0" BorderRadius="30" BackgroundColor="White" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Text="Dial" BorderRadius="30" BackgroundColor="Green" TextColor="Black" FontSize="25"/>
+
+
+    </Grid>
+    
+    
+    // --------------------------------------------------
+    
+        <Grid BackgroundColor="Black"
+          Padding="40"
+          RowSpacing="10"
+          ColumnSpacing="10">
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"
+               Text="1234"
+               FontAttributes="Bold"
+               TextColor="White"
+               FontSize="40"
+               HorizontalOptions="Center"/>
+
+        <Grid.Resources>
+            <ResourceDictionary>
+                <x:Double x:Key="meineZahl"> 40 </x:Double>
+
+                <!-- Expliziter Style-->
+                <!-- Vererbung mithilfe von BasedOn-->
+                <Style TargetType="Button" x:Key="specialButtonStyle">
+                    <Setter Property="BackgroundColor" Value="Gainsboro"/>
+                    <Setter Property="TextColor" Value="DarkGray"/>
+                    <Setter Property="FontSize" Value="{StaticResource meineZahl}"/>
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+
+                <!-- Impliziter Style-->
+                <!-- Gilt automatisch für alle Buttons-->
+                <Style TargetType="Button">
+                    <Setter Property="BackgroundColor" Value="LemonChiffon"/>
+                    <Setter Property="TextColor" Value="CadetBlue"/>
+                    <Setter Property="FontSize" Value="{StaticResource meineZahl}"/>
+                </Style>
+
+
+            </ResourceDictionary>
+        </Grid.Resources>
+
+
+        <Button Grid.Row="1" Grid.Column="0" Text="1" BorderRadius="30" BackgroundColor="Orange" TextColor="Black" FontSize="{StaticResource meineZahl}"/>
+        <Button Grid.Row="1" Grid.Column="1" Text="2" BorderRadius="30" BackgroundColor="Orange" TextColor="Black" FontSize="{StaticResource meineZahl}"/>
+        <Button Grid.Row="1" Grid.Column="2" Text="3" BorderRadius="30" BackgroundColor="Orange" TextColor="Black" FontSize="{StaticResource meineZahl}"/>
+        <Button Grid.Row="2" Grid.Column="0" Text="4" Style="{StaticResource specialButtonStyle}" />
+        <Button Grid.Row="2" Grid.Column="1" Text="5" Style="{StaticResource specialButtonStyle}"/>
+        <Button Grid.Row="2" Grid.Column="2" Text="6" Style="{StaticResource specialButtonStyle}"/>
+        <Button Grid.Row="3" Grid.Column="0" Text="7" />
+        <Button Grid.Row="3" Grid.Column="1" Text="8" />
+        <Button Grid.Row="3" Grid.Column="2" Text="9" />
+        <Button Grid.Row="4" Grid.Column="1" Text="0" BorderRadius="30" TextColor="Black" FontSize="25"/>
+        <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Text="Dial" BorderRadius="30" BackgroundColor="Green" TextColor="Black" FontSize="25"/>
+    </Grid>
+    
+    
+    // ----------------------------
+    
+        <!-- AbsoluteLayout-->
+    <!-- AbsoluteLayout.LayoutBounds="X,Y,width,height"-->
+    <!-- Proportional (zwischen 0 und 1) mit AbsolueLayout.LayoutFlags-->
+    <!-- Achtung: Position fängt nicht bei "0.333" an, sondern verteilt die Höhe ab diesem Punkt gleichmäßig rauf und runter-->
+    <!-- Trick: Y auf 1 setzen damit nur noch in eine Richtung die höhe gesetzt werden kann-->
+
+    <AbsoluteLayout BackgroundColor="LightGreen">
+
+        <BoxView BackgroundColor="LightCyan" 
+                 AbsoluteLayout.LayoutBounds="0,0,1,0.333"
+                 AbsoluteLayout.LayoutFlags="SizeProportional"/>
+
+        <BoxView BackgroundColor="LightGoldenrodYellow"
+                 AbsoluteLayout.LayoutBounds="50,50,100,100"/>
+
+        <BoxView BackgroundColor="MediumBlue"
+                 AbsoluteLayout.LayoutBounds="80,80,100,100"/>
+
+        <BoxView BackgroundColor="SkyBlue" 
+                 AbsoluteLayout.LayoutBounds="0,1,1,0.667"
+                 AbsoluteLayout.LayoutFlags="All"/>
+
+    </AbsoluteLayout>
+    
+        <RelativeLayout BackgroundColor="Maroon">
+        <BoxView x:Name="boxViewHeader" BackgroundColor="Plum"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Width,
+                                Factor=1}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Height,
+                                Factor=0.333}"/>
+
+        <BoxView BackgroundColor="DarkGreen" HeightRequest="100" WidthRequest="100"
+                 RelativeLayout.XConstraint="{ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=boxViewHeader,
+                                Property=Width,
+                                Factor=0.5,
+                                Constant=-50}"
+                 RelativeLayout.YConstraint="{ConstraintExpression
+                                Type=RelativeToView,
+                                ElementName=boxViewHeader,
+                                Property=Height,
+                                Factor=1,
+                                Constant=-50}"/>
+    </RelativeLayout>
+    
+        <AbsoluteLayout BackgroundColor="White">
+
+        <StackLayout Backgroundcolor="Gray" AbsoluteLayout.LayoutBounds="0,0,1,0.333"
+                 AbsoluteLayout.LayoutFlags="SizeProportional"/>
+            
+        </StackLayout>
+
+        <StackLayout Backgroundcolor="White" AbsoluteLayout.LayoutBounds="0,1,1,0.667"
+                 AbsoluteLayout.LayoutFlags="All"/>
+
+        </StackLayout>
+    
+
+    </AbsoluteLayout>
+    
+    
+    
+    <StackLayout x:Name="boxViewHeader" BackgroundColor="Gray" Margin="10"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Width,
+                                Factor=1}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression
+                                Type=RelativeToParent,
+                                Property=Height,
+                                Factor=0.333}">
+            
+            <Label Text="19,99 €" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="30" FontAttributes="Bold"/>
+
+            <Button Text="Add" BackgroundColor="DarkSlateGray" HorizontalOptions="Center" BorderRadius="20" Padding="20"/>
+
+        </StackLayout>
+
+    
+    
+            
+            
+            
+            
+            <Image Source="https://www.zooroyal.de/magazin/wp-content/uploads/2017/11/Goldhamster-760x560.jpg"/>
+            
+                    // OneWay-Binding
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string farbe = (string)value;
+
+            // "#FF00FF" => RGB
+            if(farbe[0] == '#')
+            {
+                return Color.FromHex(farbe);
+            }
+
+            // Variante "einfach"
+            //if (farbe == "Red")
+            //    return Color.Red;
+            //else if (farbe == "Green")
+            //    return Color.Green;
+            //else
+            //    return Color.Black;
+
+            // Variante mit Reflection ->
+            var allFields = typeof(Color).GetFields();
+            
+            if(allFields.Any(x => x.Name.ToLower() == farbe.ToLower())) // Gibt es ein Feld mit dem selben Namen ?
+            {
+                return allFields.First(x => x.Name.ToLower() == farbe.ToLower()).GetValue(typeof(Color));
+            }
+            else // Es gibt kein Feld mit diesem Namen
+            {
+                return Color.Black;
+            }
+        }
+        
+
+// ----------------- WCF ansteuern :
+
+        https://www.myvisionsoft.com/websupport/MyVisionSoft.asmx
+        
+                Dim obj As New WebSvc.Service
+        Dim ds As New DataSet
+
+        ds.Merge(obj.TestFileList)
+        
+                        Dim obj As New WebSvc.Service
+        Dim ds As New DataSet
+
+        ds.Merge(obj.TestFileList)
+        
+        
+// --> Einbinden in Xamarin.Forms:
+Schritte für DataSet in Android:
+
+1) .NET Framework C# erstellen
+2) Service erstellen als Service Reference -> Advanced -> WebReference (Name: WebReference)
+3) XForms Projekt erstellen
+4) Aus Dateisystem die Reference.cs in Android reinkopieren
+5) Fehler beheben:
+ System.Web.Services und System.Web.Data als Referenz im Android-Projekt hinzufügen
+ URL aus den Settings im C# Projekt in Android beim Fehler eintragen
+ Code in MainActivity rein für "Alle Zertifikate erlauben"
+            System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+6) DependencyService erstellen um auf die WebReference zuzugreifen 
+        
+
+// BindableProperty:
+
+        /* Erstellen:
+         * 1) propdp + TAB + TAB
+         * 2) "DependencyProperty" durch "BindableProperty" ersetzen
+         * 3) .Register - Methode durch die .Create - Methode ersetzen
+         * 4) Parameter1: Propertyname und Parametername gleichsetzen (beides auf "LabelText")
+         * 5) Parameter2: Datentyp gleichsetzen (im Get;Set; und im 2ten Parameter)
+         * 6) Parameter3: ownerclass durch den eigenen Klassennamen ersetzen (hier "LabledEntry")
+         * 7) Parameter4: "new PropertyMetadata(0)" durch den Standardwert/NullWert ersetzen
+         * 8) Name des BindableProperteis "MyPropertyProperty" zu "LabelTextProperty" ändern
+         */
+
+        public string LabelText
+        {
+            get { return (string)GetValue(LabelTextProperty); }
+            set { SetValue(LabelTextProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
+        public static readonly BindableProperty LabelTextProperty =
+            BindableProperty.Create("LabelText", typeof(string), typeof(LabledEntry), "");
+
+        public string Placeholder
+        {
+            get { return (string)GetValue(PlaceholderProperty); }
+            set { SetValue(PlaceholderProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
+        public static readonly BindableProperty PlaceholderProperty =
+            BindableProperty.Create("Placeholder", typeof(string), typeof(LabledEntry), "");
+
+        public string EntryText
+        {
+            get { return (string)GetValue(EntryTextProperty); }
+            set { SetValue(EntryTextProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
+        public static readonly BindableProperty EntryTextProperty =
+            BindableProperty.Create("EntryText", typeof(string), typeof(LabledEntry), "");
+
+
+        
