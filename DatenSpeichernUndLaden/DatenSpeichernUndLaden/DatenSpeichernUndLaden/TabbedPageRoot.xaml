@@ -4,7 +4,8 @@
              xmlns:local="clr-namespace:DatenSpeichernUndLaden"
              x:Class="DatenSpeichernUndLaden.TabbedPageRoot">
 
-    <local:MainPage Title="MainPage"/>
-    <local:SQLitePage Title="SQLite"/>
+    <local:MainPage Title="Textdatei lesen/schreiben"/>
+    <local:SQLitePage Title="SQLite lesen/schreiben"/>
+    <local:RESTPage Title="REST-Service einlesen"/>
 
 </TabbedPage>
