@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Emotion.Views.DetailPage">
+
+    <ScrollView>
+        <RelativeLayout>
+            <Image x:Name="ImageThumb" Source="{Binding Thumbnail}"
+          RelativeLayout.XConstraint ="{ConstraintExpression 
+                Type=RelativeToParent,
+                Property=Width,
+                Factor=0.1}"
+          RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,
+                Property=Height,
+                Factor=0.05}"
+          RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent,Property=Width,Factor=0.8}"
+          RelativeLayout.HeightConstraint="{ConstraintExpression
+                Type=RelativeToParent, Property=Height,Factor=0.5}"/>
+
+            <ActivityIndicator IsRunning="{Binding Source={x:Reference ImageThumb}, Path=IsLoading}"
+          RelativeLayout.XConstraint ="{ConstraintExpression 
+                Type=RelativeToParent,
+                Property=Width,
+                Factor=0.1}"
+          RelativeLayout.YConstraint ="{ConstraintExpression Type=RelativeToParent,
+                Property=Height,
+                Factor=0.05}"
+          RelativeLayout.WidthConstraint="{ConstraintExpression 
+                Type=RelativeToParent,Property=Width,Factor=0.8}"
+          RelativeLayout.HeightConstraint="{ConstraintExpression
+                Type=RelativeToParent, Property=Height,Factor=0.5}">
+                <ActivityIndicator.IsVisible>
+                    <OnPlatform x:TypeArguments="x:Boolean" iOS="True" Android="True" Default="False"/>
+                </ActivityIndicator.IsVisible>
+            </ActivityIndicator>
+
+            <Grid
+          RelativeLayout.XConstraint ="{ConstraintExpression 
+                Type=RelativeToParent,
+                Property=Width,
+                Factor=0.1}"
+          RelativeLayout.WidthConstraint="{ConstraintExpression
+                Type=RelativeToView, ElementName=ImageThumb,
+                Property=Width}"
+          RelativeLayout.YConstraint="{ConstraintExpression
+                Type=RelativeToView, ElementName=ImageThumb,
+                Property=Height,
+                Constant=40}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+
+                <Label Grid.Column="0" Grid.Row="0" Text="Age:"/>
+                <Label Grid.Column="1" Grid.Row="0" Text="{Binding Age}" LineBreakMode="WordWrap"/>
+
+                <Label Grid.Column="0" Grid.Row="1" Text="Gender:"/>
+                <Label Grid.Column="1" Grid.Row="1" Text="{Binding Gender}" LineBreakMode="WordWrap"/>
+
+                <Label Grid.Column="0" Grid.Row="2" Text="Neutral:"/>
+                <Label Grid.Column="1" Grid.Row="2" Text="{Binding Neutral}" LineBreakMode="WordWrap"/>
+                <Label Grid.Column="0" Grid.Row="3" Text="Happiness:"/>
+                <Label Grid.Column="1" Grid.Row="3" Text="{Binding Happiness}" LineBreakMode="WordWrap"/>
+                <Label Grid.Column="0" Grid.Row="4" Text="Sadness:"/>
+                <Label Grid.Column="1" Grid.Row="4" Text="{Binding Sadness}" LineBreakMode="WordWrap"/>
+                <Label Grid.Column="0" Grid.Row="5" Text="Anger:"/>
+                <Label Grid.Column="1" Grid.Row="5" Text="{Binding Anger}" LineBreakMode="WordWrap"/>
+                <Label Grid.Column="0" Grid.Row="6" Text="Contempt:"/>
+                <Label Grid.Column="1" Grid.Row="6" Text="{Binding Contempt}" LineBreakMode="WordWrap"/>
+                <Label Grid.Column="0" Grid.Row="7" Text="Surprise:"/>
+                <Label Grid.Column="1" Grid.Row="7" Text="{Binding Surprise}" LineBreakMode="WordWrap"/>
+                <Label Grid.Column="0" Grid.Row="8" Text="Disgust:"/>
+                <Label Grid.Column="1" Grid.Row="8" Text="{Binding Disgust}" LineBreakMode="WordWrap"/>
+
+            </Grid>
+        </RelativeLayout>
+    </ScrollView>
+</ContentPage>
