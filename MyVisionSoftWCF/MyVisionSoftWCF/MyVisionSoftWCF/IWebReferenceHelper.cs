@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MyVisionSoftWCF
 {
-    public class IWebReferenceHelper
+    public interface IWebReferenceHelper
     {
         object GetTestDataSet();
     }
