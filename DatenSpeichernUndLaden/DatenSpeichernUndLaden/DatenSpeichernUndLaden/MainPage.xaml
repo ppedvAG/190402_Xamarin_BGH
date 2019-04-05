@@ -2,13 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:DatenSpeichernUndLaden"
-             x:Class="DatenSpeichernUndLaden.MainPage">
+             x:Class="DatenSpeichernUndLaden.MainPage"
+             Appearing="ContentPage_Appearing">
 
     <StackLayout VerticalOptions="Center">
 
         <Entry x:Name="entryText" Placeholder="dein Text"/>
         <Button x:Name="buttonSpeichern" Text="Speichern als .txt" Clicked="ButtonSpeichern_Clicked"/>
         <Button x:Name="buttonLaden" Text="Textdokument laden" Clicked="ButtonLaden_Clicked"/>
+
+        <BoxView BackgroundColor="Black" HeightRequest="5"/>
+
+        <Label x:Name="labelMesswert" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Darkmode:"/>
+            <Switch x:Name="switchDarkmode" Toggled="SwitchDarkmode_Toggled"/>
+        </StackLayout>
 
     </StackLayout>
 

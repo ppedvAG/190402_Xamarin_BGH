@@ -51,5 +51,20 @@ namespace DatenSpeichernUndLaden
             string text = helper.LoadFromTextFile("demo.txt");
             DisplayAlert("Laden mit DependencyService", text, "OK");
         }
+
+        private void ContentPage_Appearing(object sender, EventArgs e)
+        {
+            // Zugriff auf die Application-Properties
+            labelMesswert.Text = App.Current.Properties["Messwert"].ToString();
+            switchDarkmode.IsToggled = (bool)App.Current.Properties["Darkmode"];
+        }
+
+        private void SwitchDarkmode_Toggled(object sender, ToggledEventArgs e)
+        {
+            App.Current.Properties["Darkmode"] = switchDarkmode.IsToggled;
+            //Sicherheitshalber
+            App.Current.SavePropertiesAsync();
+
+        }
     }
 }

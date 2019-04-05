@@ -12,6 +12,21 @@ namespace DatenSpeichernUndLaden
             InitializeComponent();
 
             MainPage = new TabbedPageRoot();
+
+            // Anwendungseigenschaften (empfohlen: nur primitive Datentypen (string,int,double usw....)
+            // Properties.Add("Darkmode", true);
+            // WICHTIG: Bei einem Absturz wird nichts gespeichert !!!
+
+            // Speichern erzwingen:
+            // SavePropertiesAsync();
+
+            // Setup für Startwerte
+            if (Properties.ContainsKey("Darkmode") == false)
+                Properties.Add("Darkmode", false);
+            if (Properties.ContainsKey("Messwert") == false)
+                Properties.Add("Messwert", 1234567);
+
+            SavePropertiesAsync(); // Speichern erzwingen
         }
 
         protected override void OnStart()
@@ -21,7 +36,7 @@ namespace DatenSpeichernUndLaden
 
         protected override void OnSleep()
         {
-            // Handle when your app sleeps
+            // HIER werden die ApplicationProperties gespeichert !!
         }
 
         protected override void OnResume()
