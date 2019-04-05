@@ -5,5 +5,6 @@
              x:Class="DatenSpeichernUndLaden.TabbedPageRoot">
 
     <local:MainPage Title="MainPage"/>
+    <local:SQLitePage Title="SQLite"/>
 
 </TabbedPage>

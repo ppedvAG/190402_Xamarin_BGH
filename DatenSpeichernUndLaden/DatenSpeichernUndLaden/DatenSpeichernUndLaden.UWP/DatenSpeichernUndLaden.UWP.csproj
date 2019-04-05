@@ -146,6 +146,9 @@
     <PackageReference Include="Plugin.LocalNotification">
       <Version>2.0.7</Version>
     </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.5.231</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Essentials">
       <Version>1.0.1</Version>
     </PackageReference>
