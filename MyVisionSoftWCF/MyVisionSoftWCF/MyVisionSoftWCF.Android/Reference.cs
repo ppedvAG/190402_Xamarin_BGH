@@ -115,7 +115,7 @@ namespace MyVisionSoft.Logic.WebReference
         /// <remarks/>
         public Service()
         {
-            this.Url = global::MyVisionSoft.Logic.Properties.Settings.Default.MyVisionSoft_Logic_WebReference_Service;
+            this.Url = "https://www.myvisionsoft.com/websupport/MyVisionSoft.asmx";
             if ((this.IsLocalFileSystemWebService(this.Url) == true))
             {
                 this.UseDefaultCredentials = true;
