@@ -1,0 +1,1991 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadSupportNewstickers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadSupportNewstickersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadSupportNewstickersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SupportRequestsAreOpen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGroup" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SupportRequestsAreOpenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SupportRequestsAreOpenResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadSupportRequestFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFileID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadSupportRequestFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadSupportRequestFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginalname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginalExtension" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="intSize" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="bytFile" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveSupportRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DS">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveSupportRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveSupportRequestResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadSupportRequest">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadSupportRequestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadSupportRequestResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadMyFAQs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadMyFAQsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadMyFAQsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadFAQ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadFAQResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadFAQResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFAQ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DS">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFAQResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveFAQResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadMySupportRequests">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUsername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadMySupportRequestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadMySupportRequestsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadCoreTeamSupportRequests">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadCoreTeamSupportRequestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadCoreTeamSupportRequestsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadControllingSupportRequests">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadControllingSupportRequestsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadControllingSupportRequestsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofAppServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofAppServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionofAppServerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAvailableDownloads">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadAvailableDownloadsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadAvailableDownloadsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofDeviceHunter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofDeviceHunterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionofDeviceHunterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofERPImport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofERPImportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionofERPImportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofFileContentImport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofFileContentImportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionofFileContentImportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofFileImport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofFileImportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionofFileImportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofFullindexing">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofFullindexingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionofFullindexingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofScanning">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofScanningResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionofScanningResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionofMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofTRanslator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofTRanslatorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionofTRanslatorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofLDAPConnector">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofLDAPConnectorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionofLDAPConnectorResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofUpdater">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofUpdaterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionofUpdaterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofClient">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVersionofClientResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVersionofClientResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadTestFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadTestFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadTestFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadFileList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadFileListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadFileListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadCompressedFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSystem" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadCompressedFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadCompressedFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGlobalTranslations">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtLastCall" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGlobalTranslationsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGlobalTranslationsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadSPRFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFilID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadSPRFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadSPRFileResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadSPRDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadSPRDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadSPRDocResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadChangedSPRs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadChangedSPRsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadChangedSPRsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UploadSPRDoc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DS">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadSPRDocResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadSPRDocResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadSPRFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strfileID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bytFile" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadSPRFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadSPRFileResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadSPRConfirm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSPRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSPSID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadSPRConfirmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadSPRConfirmResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadSPRConfirm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="commguid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompSerial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="decMaxUsers" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMacs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSPRID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSPSID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dtDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadSPRConfirmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DownloadSPRConfirmResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestFileList">
+        <s:complexType />
+      </s:element>
+      <s:element name="TestFileListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestFileListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadSupportNewstickersSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadSupportNewstickers" />
+  </wsdl:message>
+  <wsdl:message name="LoadSupportNewstickersSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadSupportNewstickersResponse" />
+  </wsdl:message>
+  <wsdl:message name="SupportRequestsAreOpenSoapIn">
+    <wsdl:part name="parameters" element="tns:SupportRequestsAreOpen" />
+  </wsdl:message>
+  <wsdl:message name="SupportRequestsAreOpenSoapOut">
+    <wsdl:part name="parameters" element="tns:SupportRequestsAreOpenResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadSupportRequestFileSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadSupportRequestFile" />
+  </wsdl:message>
+  <wsdl:message name="LoadSupportRequestFileSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadSupportRequestFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFileSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFile" />
+  </wsdl:message>
+  <wsdl:message name="AddFileSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveSupportRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveSupportRequest" />
+  </wsdl:message>
+  <wsdl:message name="SaveSupportRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveSupportRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadSupportRequestSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadSupportRequest" />
+  </wsdl:message>
+  <wsdl:message name="LoadSupportRequestSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadSupportRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadMyFAQsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadMyFAQs" />
+  </wsdl:message>
+  <wsdl:message name="LoadMyFAQsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadMyFAQsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadFAQSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadFAQ" />
+  </wsdl:message>
+  <wsdl:message name="LoadFAQSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadFAQResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFAQSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFAQ" />
+  </wsdl:message>
+  <wsdl:message name="SaveFAQSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFAQResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadMySupportRequestsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadMySupportRequests" />
+  </wsdl:message>
+  <wsdl:message name="LoadMySupportRequestsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadMySupportRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadCoreTeamSupportRequestsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadCoreTeamSupportRequests" />
+  </wsdl:message>
+  <wsdl:message name="LoadCoreTeamSupportRequestsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadCoreTeamSupportRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadControllingSupportRequestsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadControllingSupportRequests" />
+  </wsdl:message>
+  <wsdl:message name="LoadControllingSupportRequestsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadControllingSupportRequestsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofAppServerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersionofAppServer" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofAppServerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionofAppServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadAvailableDownloadsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadAvailableDownloads" />
+  </wsdl:message>
+  <wsdl:message name="LoadAvailableDownloadsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadAvailableDownloadsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofDeviceHunterSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersionofDeviceHunter" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofDeviceHunterSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionofDeviceHunterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofERPImportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersionofERPImport" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofERPImportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionofERPImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofFileContentImportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersionofFileContentImport" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofFileContentImportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionofFileContentImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofFileImportSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersionofFileImport" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofFileImportSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionofFileImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofFullindexingSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersionofFullindexing" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofFullindexingSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionofFullindexingResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofScanningSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersionofScanning" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofScanningSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionofScanningResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersionofMessage" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionofMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofTRanslatorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersionofTRanslator" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofTRanslatorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionofTRanslatorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofLDAPConnectorSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersionofLDAPConnector" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofLDAPConnectorSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionofLDAPConnectorResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofUpdaterSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersionofUpdater" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofUpdaterSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionofUpdaterResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofClientSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVersionofClient" />
+  </wsdl:message>
+  <wsdl:message name="GetVersionofClientSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVersionofClientResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadTestFileSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadTestFile" />
+  </wsdl:message>
+  <wsdl:message name="LoadTestFileSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadTestFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadFileListSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadFileList" />
+  </wsdl:message>
+  <wsdl:message name="LoadFileListSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadFileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadFileSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadFile" />
+  </wsdl:message>
+  <wsdl:message name="LoadFileSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadCompressedFileSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadCompressedFile" />
+  </wsdl:message>
+  <wsdl:message name="LoadCompressedFileSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadCompressedFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalTranslationsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGlobalTranslations" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalTranslationsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGlobalTranslationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadSPRFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadSPRFile" />
+  </wsdl:message>
+  <wsdl:message name="DownloadSPRFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadSPRFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadSPRDocSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadSPRDoc" />
+  </wsdl:message>
+  <wsdl:message name="DownloadSPRDocSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadSPRDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadChangedSPRsSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadChangedSPRs" />
+  </wsdl:message>
+  <wsdl:message name="DownloadChangedSPRsSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadChangedSPRsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadSPRDocSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadSPRDoc" />
+  </wsdl:message>
+  <wsdl:message name="UploadSPRDocSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadSPRDocResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadSPRFileSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadSPRFile" />
+  </wsdl:message>
+  <wsdl:message name="UploadSPRFileSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadSPRFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadSPRConfirmSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadSPRConfirm" />
+  </wsdl:message>
+  <wsdl:message name="UploadSPRConfirmSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadSPRConfirmResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadSPRConfirmSoapIn">
+    <wsdl:part name="parameters" element="tns:DownloadSPRConfirm" />
+  </wsdl:message>
+  <wsdl:message name="DownloadSPRConfirmSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadSPRConfirmResponse" />
+  </wsdl:message>
+  <wsdl:message name="TestFileListSoapIn">
+    <wsdl:part name="parameters" element="tns:TestFileList" />
+  </wsdl:message>
+  <wsdl:message name="TestFileListSoapOut">
+    <wsdl:part name="parameters" element="tns:TestFileListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadSupportNewstickers">
+      <wsdl:input message="tns:LoadSupportNewstickersSoapIn" />
+      <wsdl:output message="tns:LoadSupportNewstickersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SupportRequestsAreOpen">
+      <wsdl:input message="tns:SupportRequestsAreOpenSoapIn" />
+      <wsdl:output message="tns:SupportRequestsAreOpenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadSupportRequestFile">
+      <wsdl:input message="tns:LoadSupportRequestFileSoapIn" />
+      <wsdl:output message="tns:LoadSupportRequestFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFile">
+      <wsdl:input message="tns:AddFileSoapIn" />
+      <wsdl:output message="tns:AddFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSupportRequest">
+      <wsdl:input message="tns:SaveSupportRequestSoapIn" />
+      <wsdl:output message="tns:SaveSupportRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadSupportRequest">
+      <wsdl:input message="tns:LoadSupportRequestSoapIn" />
+      <wsdl:output message="tns:LoadSupportRequestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadMyFAQs">
+      <wsdl:input message="tns:LoadMyFAQsSoapIn" />
+      <wsdl:output message="tns:LoadMyFAQsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadFAQ">
+      <wsdl:input message="tns:LoadFAQSoapIn" />
+      <wsdl:output message="tns:LoadFAQSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFAQ">
+      <wsdl:input message="tns:SaveFAQSoapIn" />
+      <wsdl:output message="tns:SaveFAQSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadMySupportRequests">
+      <wsdl:input message="tns:LoadMySupportRequestsSoapIn" />
+      <wsdl:output message="tns:LoadMySupportRequestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCoreTeamSupportRequests">
+      <wsdl:input message="tns:LoadCoreTeamSupportRequestsSoapIn" />
+      <wsdl:output message="tns:LoadCoreTeamSupportRequestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadControllingSupportRequests">
+      <wsdl:input message="tns:LoadControllingSupportRequestsSoapIn" />
+      <wsdl:output message="tns:LoadControllingSupportRequestsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofAppServer">
+      <wsdl:input message="tns:GetVersionofAppServerSoapIn" />
+      <wsdl:output message="tns:GetVersionofAppServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadAvailableDownloads">
+      <wsdl:input message="tns:LoadAvailableDownloadsSoapIn" />
+      <wsdl:output message="tns:LoadAvailableDownloadsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofDeviceHunter">
+      <wsdl:input message="tns:GetVersionofDeviceHunterSoapIn" />
+      <wsdl:output message="tns:GetVersionofDeviceHunterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofERPImport">
+      <wsdl:input message="tns:GetVersionofERPImportSoapIn" />
+      <wsdl:output message="tns:GetVersionofERPImportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofFileContentImport">
+      <wsdl:input message="tns:GetVersionofFileContentImportSoapIn" />
+      <wsdl:output message="tns:GetVersionofFileContentImportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofFileImport">
+      <wsdl:input message="tns:GetVersionofFileImportSoapIn" />
+      <wsdl:output message="tns:GetVersionofFileImportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofFullindexing">
+      <wsdl:input message="tns:GetVersionofFullindexingSoapIn" />
+      <wsdl:output message="tns:GetVersionofFullindexingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofScanning">
+      <wsdl:input message="tns:GetVersionofScanningSoapIn" />
+      <wsdl:output message="tns:GetVersionofScanningSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofMessage">
+      <wsdl:input message="tns:GetVersionofMessageSoapIn" />
+      <wsdl:output message="tns:GetVersionofMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofTRanslator">
+      <wsdl:input message="tns:GetVersionofTRanslatorSoapIn" />
+      <wsdl:output message="tns:GetVersionofTRanslatorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofLDAPConnector">
+      <wsdl:input message="tns:GetVersionofLDAPConnectorSoapIn" />
+      <wsdl:output message="tns:GetVersionofLDAPConnectorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofUpdater">
+      <wsdl:input message="tns:GetVersionofUpdaterSoapIn" />
+      <wsdl:output message="tns:GetVersionofUpdaterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofClient">
+      <wsdl:input message="tns:GetVersionofClientSoapIn" />
+      <wsdl:output message="tns:GetVersionofClientSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadTestFile">
+      <wsdl:input message="tns:LoadTestFileSoapIn" />
+      <wsdl:output message="tns:LoadTestFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadFileList">
+      <wsdl:input message="tns:LoadFileListSoapIn" />
+      <wsdl:output message="tns:LoadFileListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadFile">
+      <wsdl:input message="tns:LoadFileSoapIn" />
+      <wsdl:output message="tns:LoadFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadCompressedFile">
+      <wsdl:input message="tns:LoadCompressedFileSoapIn" />
+      <wsdl:output message="tns:LoadCompressedFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalTranslations">
+      <wsdl:input message="tns:GetGlobalTranslationsSoapIn" />
+      <wsdl:output message="tns:GetGlobalTranslationsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSPRFile">
+      <wsdl:input message="tns:DownloadSPRFileSoapIn" />
+      <wsdl:output message="tns:DownloadSPRFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSPRDoc">
+      <wsdl:input message="tns:DownloadSPRDocSoapIn" />
+      <wsdl:output message="tns:DownloadSPRDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadChangedSPRs">
+      <wsdl:input message="tns:DownloadChangedSPRsSoapIn" />
+      <wsdl:output message="tns:DownloadChangedSPRsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadSPRDoc">
+      <wsdl:input message="tns:UploadSPRDocSoapIn" />
+      <wsdl:output message="tns:UploadSPRDocSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadSPRFile">
+      <wsdl:input message="tns:UploadSPRFileSoapIn" />
+      <wsdl:output message="tns:UploadSPRFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadSPRConfirm">
+      <wsdl:input message="tns:UploadSPRConfirmSoapIn" />
+      <wsdl:output message="tns:UploadSPRConfirmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSPRConfirm">
+      <wsdl:input message="tns:DownloadSPRConfirmSoapIn" />
+      <wsdl:output message="tns:DownloadSPRConfirmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TestFileList">
+      <wsdl:input message="tns:TestFileListSoapIn" />
+      <wsdl:output message="tns:TestFileListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadSupportNewstickers">
+      <soap:operation soapAction="http://tempuri.org/LoadSupportNewstickers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupportRequestsAreOpen">
+      <soap:operation soapAction="http://tempuri.org/SupportRequestsAreOpen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadSupportRequestFile">
+      <soap:operation soapAction="http://tempuri.org/LoadSupportRequestFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFile">
+      <soap:operation soapAction="http://tempuri.org/AddFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSupportRequest">
+      <soap:operation soapAction="http://tempuri.org/SaveSupportRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadSupportRequest">
+      <soap:operation soapAction="http://tempuri.org/LoadSupportRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadMyFAQs">
+      <soap:operation soapAction="http://tempuri.org/LoadMyFAQs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadFAQ">
+      <soap:operation soapAction="http://tempuri.org/LoadFAQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFAQ">
+      <soap:operation soapAction="http://tempuri.org/SaveFAQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadMySupportRequests">
+      <soap:operation soapAction="http://tempuri.org/LoadMySupportRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCoreTeamSupportRequests">
+      <soap:operation soapAction="http://tempuri.org/LoadCoreTeamSupportRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadControllingSupportRequests">
+      <soap:operation soapAction="http://tempuri.org/LoadControllingSupportRequests" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofAppServer">
+      <soap:operation soapAction="http://tempuri.org/GetVersionofAppServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAvailableDownloads">
+      <soap:operation soapAction="http://tempuri.org/LoadAvailableDownloads" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofDeviceHunter">
+      <soap:operation soapAction="http://tempuri.org/GetVersionofDeviceHunter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofERPImport">
+      <soap:operation soapAction="http://tempuri.org/GetVersionofERPImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofFileContentImport">
+      <soap:operation soapAction="http://tempuri.org/GetVersionofFileContentImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofFileImport">
+      <soap:operation soapAction="http://tempuri.org/GetVersionofFileImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofFullindexing">
+      <soap:operation soapAction="http://tempuri.org/GetVersionofFullindexing" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofScanning">
+      <soap:operation soapAction="http://tempuri.org/GetVersionofScanning" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofMessage">
+      <soap:operation soapAction="http://tempuri.org/GetVersionofMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofTRanslator">
+      <soap:operation soapAction="http://tempuri.org/GetVersionofTRanslator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofLDAPConnector">
+      <soap:operation soapAction="http://tempuri.org/GetVersionofLDAPConnector" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofUpdater">
+      <soap:operation soapAction="http://tempuri.org/GetVersionofUpdater" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofClient">
+      <soap:operation soapAction="http://tempuri.org/GetVersionofClient" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTestFile">
+      <soap:operation soapAction="http://tempuri.org/LoadTestFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadFileList">
+      <soap:operation soapAction="http://tempuri.org/LoadFileList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadFile">
+      <soap:operation soapAction="http://tempuri.org/LoadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCompressedFile">
+      <soap:operation soapAction="http://tempuri.org/LoadCompressedFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalTranslations">
+      <soap:operation soapAction="http://tempuri.org/GetGlobalTranslations" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSPRFile">
+      <soap:operation soapAction="http://tempuri.org/DownloadSPRFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSPRDoc">
+      <soap:operation soapAction="http://tempuri.org/DownloadSPRDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadChangedSPRs">
+      <soap:operation soapAction="http://tempuri.org/DownloadChangedSPRs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSPRDoc">
+      <soap:operation soapAction="http://tempuri.org/UploadSPRDoc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSPRFile">
+      <soap:operation soapAction="http://tempuri.org/UploadSPRFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSPRConfirm">
+      <soap:operation soapAction="http://tempuri.org/UploadSPRConfirm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSPRConfirm">
+      <soap:operation soapAction="http://tempuri.org/DownloadSPRConfirm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestFileList">
+      <soap:operation soapAction="http://tempuri.org/TestFileList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadSupportNewstickers">
+      <soap12:operation soapAction="http://tempuri.org/LoadSupportNewstickers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SupportRequestsAreOpen">
+      <soap12:operation soapAction="http://tempuri.org/SupportRequestsAreOpen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadSupportRequestFile">
+      <soap12:operation soapAction="http://tempuri.org/LoadSupportRequestFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFile">
+      <soap12:operation soapAction="http://tempuri.org/AddFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSupportRequest">
+      <soap12:operation soapAction="http://tempuri.org/SaveSupportRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadSupportRequest">
+      <soap12:operation soapAction="http://tempuri.org/LoadSupportRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadMyFAQs">
+      <soap12:operation soapAction="http://tempuri.org/LoadMyFAQs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadFAQ">
+      <soap12:operation soapAction="http://tempuri.org/LoadFAQ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFAQ">
+      <soap12:operation soapAction="http://tempuri.org/SaveFAQ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadMySupportRequests">
+      <soap12:operation soapAction="http://tempuri.org/LoadMySupportRequests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCoreTeamSupportRequests">
+      <soap12:operation soapAction="http://tempuri.org/LoadCoreTeamSupportRequests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadControllingSupportRequests">
+      <soap12:operation soapAction="http://tempuri.org/LoadControllingSupportRequests" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofAppServer">
+      <soap12:operation soapAction="http://tempuri.org/GetVersionofAppServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadAvailableDownloads">
+      <soap12:operation soapAction="http://tempuri.org/LoadAvailableDownloads" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofDeviceHunter">
+      <soap12:operation soapAction="http://tempuri.org/GetVersionofDeviceHunter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofERPImport">
+      <soap12:operation soapAction="http://tempuri.org/GetVersionofERPImport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofFileContentImport">
+      <soap12:operation soapAction="http://tempuri.org/GetVersionofFileContentImport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofFileImport">
+      <soap12:operation soapAction="http://tempuri.org/GetVersionofFileImport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofFullindexing">
+      <soap12:operation soapAction="http://tempuri.org/GetVersionofFullindexing" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofScanning">
+      <soap12:operation soapAction="http://tempuri.org/GetVersionofScanning" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofMessage">
+      <soap12:operation soapAction="http://tempuri.org/GetVersionofMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofTRanslator">
+      <soap12:operation soapAction="http://tempuri.org/GetVersionofTRanslator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofLDAPConnector">
+      <soap12:operation soapAction="http://tempuri.org/GetVersionofLDAPConnector" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofUpdater">
+      <soap12:operation soapAction="http://tempuri.org/GetVersionofUpdater" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVersionofClient">
+      <soap12:operation soapAction="http://tempuri.org/GetVersionofClient" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadTestFile">
+      <soap12:operation soapAction="http://tempuri.org/LoadTestFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadFileList">
+      <soap12:operation soapAction="http://tempuri.org/LoadFileList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadFile">
+      <soap12:operation soapAction="http://tempuri.org/LoadFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadCompressedFile">
+      <soap12:operation soapAction="http://tempuri.org/LoadCompressedFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalTranslations">
+      <soap12:operation soapAction="http://tempuri.org/GetGlobalTranslations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSPRFile">
+      <soap12:operation soapAction="http://tempuri.org/DownloadSPRFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSPRDoc">
+      <soap12:operation soapAction="http://tempuri.org/DownloadSPRDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadChangedSPRs">
+      <soap12:operation soapAction="http://tempuri.org/DownloadChangedSPRs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSPRDoc">
+      <soap12:operation soapAction="http://tempuri.org/UploadSPRDoc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSPRFile">
+      <soap12:operation soapAction="http://tempuri.org/UploadSPRFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadSPRConfirm">
+      <soap12:operation soapAction="http://tempuri.org/UploadSPRConfirm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadSPRConfirm">
+      <soap12:operation soapAction="http://tempuri.org/DownloadSPRConfirm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TestFileList">
+      <soap12:operation soapAction="http://tempuri.org/TestFileList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="https://www.myvisionsoft.com/websupport/MyVisionSoft.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="https://www.myvisionsoft.com/websupport/MyVisionSoft.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
