@@ -20,6 +20,9 @@ namespace MyVisionSoftWCF.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
+
+            // Hack, damit alle Zertifikate erlaubt sind:
+            System.Net.ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
         }
     }
 }
