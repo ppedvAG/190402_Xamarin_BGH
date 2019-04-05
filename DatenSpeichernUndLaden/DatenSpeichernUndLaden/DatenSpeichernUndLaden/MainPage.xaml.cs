@@ -17,6 +17,12 @@ namespace DatenSpeichernUndLaden
             InitializeComponent();
         }
 
+        // DependencyService:
+        // 1) Interface im .NET Standard erstellen (ITextFileHelper)
+        // 2) Interface im Android/iOS/UWP - Projekt implementieren
+        // 3) Attribut bei der Android/iOS/UWP hinzufügen ([assembly: Xamarin.Forms.Dependcy(meinDatentyp))]
+        // 4) Service mit DependencyService.Get<IMeinInterface> holen
+
         private void ButtonSpeichern_Clicked(object sender, EventArgs e)
         {
             //// Variante 1) Xamarin:Essentials
