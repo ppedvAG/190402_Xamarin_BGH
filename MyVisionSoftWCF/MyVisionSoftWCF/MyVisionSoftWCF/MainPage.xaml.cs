@@ -13,5 +13,11 @@ namespace MyVisionSoftWCF
         {
             InitializeComponent();
         }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            var service = DependencyService.Get<IWebReferenceHelper>();
+            var dataSet = service.GetTestDataSet();
+        }
     }
 }
