@@ -13,6 +13,8 @@
         <local:LabledEntry LabelText="Nachname:" Placeholder="Dein Nachname" />
         <local:LabledEntry LabelText="Alter:" Placeholder="Dein Alter" />
 
+        <local:SpezialEntry/>
+        
     </StackLayout>
 
 </ContentPage>
